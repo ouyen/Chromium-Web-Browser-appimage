@@ -31,9 +31,9 @@ ingredients:
   dist: $DEBRELEASE
   package: chromium
   sources:
-    - deb http://ftp.debian.org/debian/ $DEBRELEASE main contrib non-free
-    - deb http://security.debian.org/$DEBRELEASE-security/ $DEBRELEASE-security main contrib non-free
-    - deb http://ftp.debian.org/debian/ $DEBRELEASE-updates main contrib non-free
+    - deb http://archive.debian.org/debian/ stretch main contrib non-free
+    - deb http://archive.debian.org/debian/ stretch-proposed-updates main contrib non-free
+    - deb http://archive.debian.org/debian-security stretch/updates main contrib non-free
   packages:
     - chromium" >> recipe.yml
 
@@ -45,11 +45,7 @@ cd ./$APP
 
 _chromium_from_debian() {
 	# Debian oldstable-security, this may bee not in sync with the upstream
-	wget http://security.debian.org/debian-security/pool/updates/main/c/chromium/$(curl -Ls https://security.debian.org/debian-security/pool/updates/main/c/chromium/ | tr '"' '\n' | grep "^chromium" | grep .deb | grep amd64 | tail -1)
-	wget http://security.debian.org/debian-security/pool/updates/main/c/chromium/$(curl -Ls https://security.debian.org/debian-security/pool/updates/main/c/chromium/ | tr '"' '\n' | grep "^chromium-common" | grep .deb | grep amd64 | tail -1)
-	wget http://security.debian.org/debian-security/pool/updates/main/c/chromium/$(curl -Ls https://security.debian.org/debian-security/pool/updates/main/c/chromium/ | tr '"' '\n' | grep "^chromium-driver" | grep .deb | grep amd64 | tail -1)
-	wget http://security.debian.org/debian-security/pool/updates/main/c/chromium/$(curl -Ls https://security.debian.org/debian-security/pool/updates/main/c/chromium/ | tr '"' '\n' | grep "^chromium-l10n" | grep .deb | grep all | tail -1)
-	wget http://security.debian.org/debian-security/pool/updates/main/c/chromium/$(curl -Ls https://security.debian.org/debian-security/pool/updates/main/c/chromium/ | tr '"' '\n' | grep "^chromium-sandbox" | grep .deb | grep amd64 | tail -1)
+	wget https://snapshot.debian.org/archive/debian/20210111T084914Z/pool/main/c/chromium/chromium_87.0.4280.141-0.1_amd64.deb
 }
 
 _chromium_from_linux_mint() {
