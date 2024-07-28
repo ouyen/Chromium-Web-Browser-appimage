@@ -19,7 +19,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install libfuse2
-        wget https://raw.githubusercontent.com/ouyen/Chromium-Web-Browser-appimage/main/chromium -o build.sh
+        wget https://raw.githubusercontent.com/ouyen/Chromium-Web-Browser-appimage/main/chromium -O build.sh
         chmod a+x ./build.sh
         ./build.sh
         mkdir dist
