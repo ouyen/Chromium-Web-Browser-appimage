@@ -30,7 +30,7 @@ VERSION=87.0.4279.0
 
 
 # ...EXPORT THE APPDIR TO AN APPIMAGE!
-ARCH=x86_64 VERSION=87.0.4279.0 ./appimagetool -s ./Chromium/Chromium.AppDir
+ARCH=x86_64 VERSION=$(./appimagetool -v | grep -o '[[:digit:]]*') ./appimagetool -s ./$APP/$APP.AppDir
 
 ls -lah
 
