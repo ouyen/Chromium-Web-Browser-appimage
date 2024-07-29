@@ -28,7 +28,7 @@ VERSION=87.0.4279.0
 
 
 # ...EXPORT THE APPDIR TO AN APPIMAGE!
-RCH=x86_64 ./appimagetool-x86_64.AppImage ./Chromium/Chromium.AppDir/
+ARCH=x86_64 ./appimagetool-x86_64.AppImage ./Chromium/Chromium.AppDir/
 
 ls -lah
 
