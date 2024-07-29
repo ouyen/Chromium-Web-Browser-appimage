@@ -33,4 +33,4 @@ script:
   - EOF
   - chmod a+x ./AppRun
   - # Set Version
-  - ./usr/bin/chrome --version | cut -d ' ' -f2 > ../VERSION
+  - echo 87.0.4279.0 > ../VERSION

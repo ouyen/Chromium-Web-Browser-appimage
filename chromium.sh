@@ -32,5 +32,6 @@ VERSION=87.0.4279.0
 # ...EXPORT THE APPDIR TO AN APPIMAGE!
 ARCH=x86_64 VERSION=87.0.4279.0 ./appimagetool -s ./Chromium/Chromium.AppDir
 
+ls -lah
 
 mv ./*.AppImage ./Chromium_Web_Browser-$VERSION-x86_64.AppImage
