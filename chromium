@@ -37,7 +37,7 @@ ingredients:
     - deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
 
   packages:
-    - chromium" >> recipe.yml
+    - chromium-browser" >> recipe.yml
 
 mkdir -p ./$APP/$APP.AppDir
 cd ./$APP
