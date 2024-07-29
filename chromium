@@ -31,9 +31,11 @@ ingredients:
   dist: $DEBRELEASE
   package: chromium
   sources:
-    - deb http://deb.debian.org/debian/ buster main non-free contrib
-    - deb http://deb.debian.org/debian/ buster-updates main non-free contrib
-    - deb http://security.debian.org/ buster/updates main non-free contrib
+    - deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+    - deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+
   packages:
     - chromium" >> recipe.yml
 
@@ -45,7 +47,8 @@ cd ./$APP
 
 _chromium_from_debian() {
 	# Debian oldstable-security, this may bee not in sync with the upstream
-	wget https://snapshot.debian.org/archive/debian/20210111T084914Z/pool/main/c/chromium/chromium_87.0.4280.141-0.1_amd64.deb
+	# wget https://snapshot.debian.org/archive/debian/20210111T084914Z/pool/main/c/chromium/chromium_87.0.4280.141-0.1_amd64.deb
+	wget http://security.ubuntu.com/ubuntu/pool/universe/c/chromium-browser/chromium-browser_80.0.3987.163-0ubuntu1_amd64.deb
 }
 
 _chromium_from_linux_mint() {
